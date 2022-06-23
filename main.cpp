@@ -58,8 +58,17 @@ void free_singly_linked_list(SinglyLinkedListNode* node) {
  *
  */
 void printLinkedList(SinglyLinkedListNode* head) {
+    //base case: if head->next = nullptr we're at the end of the linked list.
+    if (head->next == nullptr) {
+        std::cout << head->data << std::endl;
+        return;
+    }
 
-
+    //If not at the base case, recurse
+    else {
+        std::cout << head->data << std::endl;
+        printLinkedList(head->next);
+    }
 }
 
 int main(){
