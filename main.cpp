@@ -77,16 +77,17 @@ int main(){
     int llist_count;
     cin >> llist_count;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-    for (int i = 0; i < llist_count; i++) {
-        int llist_item;
-        cin >> llist_item;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-        llist->insert_node(llist_item);
+    if (llist_count >= 1 && llist_count <= 1000) {
+        for (int i = 0; i < llist_count; i++) {
+            int llist_item;
+            cin >> llist_item;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (llist_item >= 1 && llist_item <=  1000) {
+                llist->insert_node(llist_item);
+            }
+        }
+        printLinkedList(llist->head);
     }
-
-    printLinkedList(llist->head);
 
     return 0;
 }
